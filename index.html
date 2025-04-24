@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IntA11Y - Solutions : intégration web, web design et accessibilité numérique 100% distanciel dans les Hauts-de-France.">
+  <title>IntA11Y - Solutions</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+  <link rel="stylesheet" href="./src/styles/style.css">
+</head>
+<body>
+    <a id="top"></a>
+    <!-- START HEADER -->
+    <header id="header" class="header">
+        <div class="title-logo-container">
+            <div class="logo-content">
+                <img src="./src/img/INTA11Y-Solutions.png" alt="">
+                <h1 class="title-name">IntA11Y - Solutions</h1>
+            </div>
+
+            <div class="title-content">
+                <p class="descr">Intégration web, design et accessibilité 100% distanciel</p>
+            </div>
+        </div>
+
+        <nav aria-label="Navigation principale" class="nav-content">
+            <a href="#about">À propos</a>
+            <a href="#services">Nos services</a> 
+            <a href="#portfolio">Réalisations</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <!-- END HEADER -->
+
+    <main>
+        <!-- START ABOUT SECTION -->
+        <section id="about" class="about-container">
+            <h2 class="title-section">À propos</h2>
+    
+            <div class="about-content">
+                <div class="about-txt">
+                    <p>IntA11Y - Solutions est née de la volonté de rendre le web <span>accessible à tous</span>, sans compromis sur l’esthétique ou la performance. Nous sommes une structure <span>spécialisée dans l’intégration web</span>, le design <span>inclusif</span> et <span>l’audit d’accessibilité numérique</span>, basée dans les Hauts-de-France et entièrement disponible à distance.</p>
+                    <br>
+                    <p>Notre approche repose sur <span>l’écoute</span>, la <span>rigueur technique</span> et l’exigence de qualité. Nous collaborons avec des porteurs de projets, des agences ou des collectivités pour créer des sites web <span>modernes</span>, <span>accessibles</span> et <span>optimisés</span>, répondant aux normes <span>RGAA et WCAG.</span></p>
+                    <br>
+                    <p>Nous croyons qu’<span>un web inclusif est un web plus efficace</span>. Travailler avec nous, c’est s’assurer d’un <span>accompagnement humain</span>, <span>transparent</span> et <span>engagé</span> pour créer des expériences numériques qui ont du sens, pour tout le monde.</p>
+
+                    <!-- <p>
+                        Passionnée par le web, je transforme chaque ligne de code en passerelle vers l’inclusion. Intégratrice web créative et auditrice accessibilité engagée, je conçois des interfaces à la fois esthétiques, fonctionnelles et universellement accessibles. Mon moteur : rendre le numérique plus humain, plus équitable. J’allie rigueur technique, sens du détail et empathie pour offrir des expériences utilisateurs sans barrières.
+                    </p> -->
+                    <!-- <p>
+                        Passionnée par le web inclusif, je conçois des interfaces qui allient esthétisme, performance et accessibilité. Intégratrice web inventive et auditrice accessibilité engagée, je mets mon expertise au service d’un numérique sans barrières. Mon objectif : créer des expériences utilisateurs fluides, intuitives et ouvertes à tous. Allier code, créativité et impact positif, c’est ce qui me motive chaque jour.
+                    </p> -->
+                </div>
+                <div class="about-img-content">
+                    <img src="./src/img/newsletter.jpg" alt="">
+                </div>
+            </div>
+    
+        </section>
+        <!-- END ABOUT SECTION -->
+    
+        <!-- START SERVICES SECTION -->
+        <section id="services" class="services-container">
+            <h2 class="title-section">Nos services</h2>
+            <ul>
+                <li><strong>Web Design</strong> – Nous concevons des interfaces esthétiques, modernes et centrées sur l'utilisateur, tout en respectant les normes d’accessibilité. Chaque design est pensé pour offrir une navigation fluide et intuitive, quelle que soit la situation de votre public. Du prototypage à la création de maquettes complètes, notre approche garantit un rendu professionnel, engageant et inclusif.</li>
+                <li><strong>Intégration Web</strong> – Nous transformons vos maquettes en sites web performants, réactifs et entièrement accessibles. Grâce à notre expertise HTML, CSS et JavaScript, nous assurons une compatibilité sur tous les navigateurs et appareils, en veillant à une expérience cohérente et agréable pour tous les utilisateurs, y compris ceux utilisant des technologies d’assistance.</li>
+                <li><strong>Audit d'accessibilité numérique</strong> – Vous souhaitez rendre votre site conforme aux standards RGAA ou WCAG ? Nous réalisons des audits complets et détaillés, identifions les points bloquants et vous accompagnons avec des recommandations concrètes et actionnables. Notre objectif : vous permettre de proposer un site réellement accessible, à la hauteur des exigences légales et des attentes de vos utilisateurs.</li>
+            </ul>
+        </section>
+        <!-- END SERVICES SECTION -->
+    
+    
+        <!-- START PORTFOLIO SECTION -->
+        <section id="portfolio" class="portfolio-container">
+            <h2 class="title-section">Nos réalisations</h2>
+            <div class="portfolio-grid" id="portfolio-grid"></div>
+        </section>
+        <!-- END PORTFOLIO SECTION -->
+    
+    
+    
+        <section id="contact-fom" class="contact-container">
+            <h2 class="title-section">Contact</h2>
+            <form action="https://formsubmit.co/angelique@inta11ysolutions.org" method="POST" aria-label="Formulaire de contact">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+    
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+    
+                <label for="objet">Objet :</label>
+                <input type="text" id="objet" name="objet" required>
+    
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+    
+                <!-- <label for="contact">Moyen de contact préféré :</label>
+                <select id="contact" name="contact" required>
+                    <option value="email">Email</option>
+                    <option value="téléphone">Téléphone</option>
+                </select> -->
+                <label for="contact">Moyen de contact préféré :</label>
+                <select id="contact" name="contact" required onchange="toggleContactField()">
+                    <option value="">-- Sélectionnez --</option>
+                    <option value="email">Email</option>
+                    <option value="téléphone">Téléphone</option>
+                </select>
+    
+                <!-- Message dynamique pour lecteurs d’écran -->
+                <div id="instruction" aria-live="polite" style="margin-top: 10px;"></div>
+    
+                <!-- Champ email -->
+                <div id="emailField" style="display: none; margin-top: 10px;">
+                    <label for="email">Adresse email :</label>
+                    <input type="email" id="email" name="email">
+                </div>
+    
+                <!-- Champ téléphone -->
+                <div id="phoneField" style="display: none; margin-top: 10px;">
+                    <label for="phone">Numéro de téléphone :</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    
+    
+        <!-- START SOCIALS SECTION -->
+        <section class="social-container" aria-label="Réseaux sociaux">
+            <h2 class="title-section">Suivez-nous</h2>
+    
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="https://img.icons8.com/fluency/96/linkedin.png" alt="">
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img  src="https://img.icons8.com/3d-fluency/94/instagram-new.png" alt="">
+                        Instagram
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://img.icons8.com/color/48/youtube-play.png" alt=""/>
+                        Youtube
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img.icons8.com/fluency/96/facebook.png" alt="facebook"/>
+                        Facebook
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://img.icons8.com/color/48/coffee-to-go.png" alt=""/>
+                        By ma a coffee
+                    </a>
+                </li>
+            </ul>
+            
+            
+            
+            <!-- <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i>TikTok</a> -->
+            
+            
+        </section>
+        <!-- END SOCIAL SECTION -->
+    </main>
+
+    <!-- START FOOTER -->
+    <footer class="footer-container" aria-label="Pied de page du site">
+        <div class="footer-content">
+            <p>&copy; 2025 <span>IntA11Y - Solutions</span> tous droits réservés.</p>
+
+            <nav aria-label="Liens d'informations légales">
+                <ul class="footer-links">
+                    <li>
+                        <a href="./src/links/mentions-legales.html">Mentions légales</a>
+                    </li>
+                    <li>
+                        <a href="./src/links/politique-confidentialite.html">Politique de confidentialité</a>
+                    </li>
+                    <li>
+                        <a href="./src/links/politique-cookies.html">Politique de cookies</a>
+                    </li>
+                    <li>
+                        <a href="./src/links/cgu.html">CGU</a>
+                    </li>
+                    <li>
+                        <a href="./src/links/cgv.html">CGV</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- BUTTON Back to top -->
+    <button class="back-to-top" aria-label="Retour en haut de page" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+<script src="./src/scripts/portfolio.js"></script>
+<script src="./src/scripts/toggleContactFiel.js"></script>
+</body>
+</html>
