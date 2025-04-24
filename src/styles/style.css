@@ -9,6 +9,7 @@
   --yellow: #ffb400;
   --green: #44ca5b;
   --pink: #ce6b9c;
+  --orange: #db4500;
 }
 
 *, *::before, *::after {
@@ -308,27 +309,45 @@ header nav a:focus, header nav a:hover {
   outline: 3px solid #000;
 }
 
-.cgu-content {
-  height: 100vh;
-  background-color: aqua;
-}
-
-.mentions-container {
+.mentions-container, .cgu-container, .cgv-container, .cookies-container, .confidentiality-container {
   border: 1px solid black;
   width: 100%;
 }
-.mentions-container h2 {
+.mentions-container h2, .cgu-container h2, .cgv-container h2, .cookies-container h2, .confidentiality-container h2 {
   border-bottom: 4px solid var(--blue);
 }
-.mentions-container .mentions-content h3 {
+.mentions-container .mentions-content .first-h3, .mentions-container .cgv-content .first-h3, .mentions-container .cgu-content .first-h3, .mentions-container .cookies-content .first-h3, .cgu-container .mentions-content .first-h3, .cgu-container .cgv-content .first-h3, .cgu-container .cgu-content .first-h3, .cgu-container .cookies-content .first-h3, .cgv-container .mentions-content .first-h3, .cgv-container .cgv-content .first-h3, .cgv-container .cgu-content .first-h3, .cgv-container .cookies-content .first-h3, .cookies-container .mentions-content .first-h3, .cookies-container .cgv-content .first-h3, .cookies-container .cgu-content .first-h3, .cookies-container .cookies-content .first-h3, .confidentiality-container .mentions-content .first-h3, .confidentiality-container .cgv-content .first-h3, .confidentiality-container .cgu-content .first-h3, .confidentiality-container .cookies-content .first-h3 {
   border-bottom: 4px solid var(--blue);
 }
-.mentions-container .mentions-content ul {
+.mentions-container .mentions-content .second-h3, .mentions-container .cgv-content .second-h3, .mentions-container .cgu-content .second-h3, .mentions-container .cookies-content .second-h3, .cgu-container .mentions-content .second-h3, .cgu-container .cgv-content .second-h3, .cgu-container .cgu-content .second-h3, .cgu-container .cookies-content .second-h3, .cgv-container .mentions-content .second-h3, .cgv-container .cgv-content .second-h3, .cgv-container .cgu-content .second-h3, .cgv-container .cookies-content .second-h3, .cookies-container .mentions-content .second-h3, .cookies-container .cgv-content .second-h3, .cookies-container .cgu-content .second-h3, .cookies-container .cookies-content .second-h3, .confidentiality-container .mentions-content .second-h3, .confidentiality-container .cgv-content .second-h3, .confidentiality-container .cgu-content .second-h3, .confidentiality-container .cookies-content .second-h3 {
+  border-bottom: 4px solid var(--red);
+}
+.mentions-container .mentions-content .third-h3, .mentions-container .cgv-content .third-h3, .mentions-container .cgu-content .third-h3, .mentions-container .cookies-content .third-h3, .cgu-container .mentions-content .third-h3, .cgu-container .cgv-content .third-h3, .cgu-container .cgu-content .third-h3, .cgu-container .cookies-content .third-h3, .cgv-container .mentions-content .third-h3, .cgv-container .cgv-content .third-h3, .cgv-container .cgu-content .third-h3, .cgv-container .cookies-content .third-h3, .cookies-container .mentions-content .third-h3, .cookies-container .cgv-content .third-h3, .cookies-container .cgu-content .third-h3, .cookies-container .cookies-content .third-h3, .confidentiality-container .mentions-content .third-h3, .confidentiality-container .cgv-content .third-h3, .confidentiality-container .cgu-content .third-h3, .confidentiality-container .cookies-content .third-h3 {
+  border-bottom: 4px solid var(--yellow);
+}
+.mentions-container .mentions-content .four-h3, .mentions-container .cgv-content .four-h3, .mentions-container .cgu-content .four-h3, .mentions-container .cookies-content .four-h3, .cgu-container .mentions-content .four-h3, .cgu-container .cgv-content .four-h3, .cgu-container .cgu-content .four-h3, .cgu-container .cookies-content .four-h3, .cgv-container .mentions-content .four-h3, .cgv-container .cgv-content .four-h3, .cgv-container .cgu-content .four-h3, .cgv-container .cookies-content .four-h3, .cookies-container .mentions-content .four-h3, .cookies-container .cgv-content .four-h3, .cookies-container .cgu-content .four-h3, .cookies-container .cookies-content .four-h3, .confidentiality-container .mentions-content .four-h3, .confidentiality-container .cgv-content .four-h3, .confidentiality-container .cgu-content .four-h3, .confidentiality-container .cookies-content .four-h3 {
+  border-bottom: 4px solid var(--green);
+}
+.mentions-container .mentions-content .five-h3, .mentions-container .cgv-content .five-h3, .mentions-container .cgu-content .five-h3, .mentions-container .cookies-content .five-h3, .cgu-container .mentions-content .five-h3, .cgu-container .cgv-content .five-h3, .cgu-container .cgu-content .five-h3, .cgu-container .cookies-content .five-h3, .cgv-container .mentions-content .five-h3, .cgv-container .cgv-content .five-h3, .cgv-container .cgu-content .five-h3, .cgv-container .cookies-content .five-h3, .cookies-container .mentions-content .five-h3, .cookies-container .cgv-content .five-h3, .cookies-container .cgu-content .five-h3, .cookies-container .cookies-content .five-h3, .confidentiality-container .mentions-content .five-h3, .confidentiality-container .cgv-content .five-h3, .confidentiality-container .cgu-content .five-h3, .confidentiality-container .cookies-content .five-h3 {
+  border-bottom: 4px solid var(--pink);
+}
+.mentions-container .mentions-content .six-h3, .mentions-container .cgv-content .six-h3, .mentions-container .cgu-content .six-h3, .mentions-container .cookies-content .six-h3, .cgu-container .mentions-content .six-h3, .cgu-container .cgv-content .six-h3, .cgu-container .cgu-content .six-h3, .cgu-container .cookies-content .six-h3, .cgv-container .mentions-content .six-h3, .cgv-container .cgv-content .six-h3, .cgv-container .cgu-content .six-h3, .cgv-container .cookies-content .six-h3, .cookies-container .mentions-content .six-h3, .cookies-container .cgv-content .six-h3, .cookies-container .cgu-content .six-h3, .cookies-container .cookies-content .six-h3, .confidentiality-container .mentions-content .six-h3, .confidentiality-container .cgv-content .six-h3, .confidentiality-container .cgu-content .six-h3, .confidentiality-container .cookies-content .six-h3 {
+  border-bottom: 4px solid var(--orange);
+}
+.mentions-container .mentions-content span, .mentions-container .cgv-content span, .mentions-container .cgu-content span, .mentions-container .cookies-content span, .cgu-container .mentions-content span, .cgu-container .cgv-content span, .cgu-container .cgu-content span, .cgu-container .cookies-content span, .cgv-container .mentions-content span, .cgv-container .cgv-content span, .cgv-container .cgu-content span, .cgv-container .cookies-content span, .cookies-container .mentions-content span, .cookies-container .cgv-content span, .cookies-container .cgu-content span, .cookies-container .cookies-content span, .confidentiality-container .mentions-content span, .confidentiality-container .cgv-content span, .confidentiality-container .cgu-content span, .confidentiality-container .cookies-content span {
+  font-weight: 600;
+  text-decoration: underline;
+}
+.mentions-container .mentions-content ul, .mentions-container .cgv-content ul, .mentions-container .cgu-content ul, .mentions-container .cookies-content ul, .cgu-container .mentions-content ul, .cgu-container .cgv-content ul, .cgu-container .cgu-content ul, .cgu-container .cookies-content ul, .cgv-container .mentions-content ul, .cgv-container .cgv-content ul, .cgv-container .cgu-content ul, .cgv-container .cookies-content ul, .cookies-container .mentions-content ul, .cookies-container .cgv-content ul, .cookies-container .cgu-content ul, .cookies-container .cookies-content ul, .confidentiality-container .mentions-content ul, .confidentiality-container .cgv-content ul, .confidentiality-container .cgu-content ul, .confidentiality-container .cookies-content ul {
   background: var(--light);
   margin: 1rem auto;
   padding: 1rem;
   border-left: 4px solid var(--accent);
 }
-.mentions-container .mentions-content ul li {
+.mentions-container .mentions-content ul li, .mentions-container .cgv-content ul li, .mentions-container .cgu-content ul li, .mentions-container .cookies-content ul li, .cgu-container .mentions-content ul li, .cgu-container .cgv-content ul li, .cgu-container .cgu-content ul li, .cgu-container .cookies-content ul li, .cgv-container .mentions-content ul li, .cgv-container .cgv-content ul li, .cgv-container .cgu-content ul li, .cgv-container .cookies-content ul li, .cookies-container .mentions-content ul li, .cookies-container .cgv-content ul li, .cookies-container .cgu-content ul li, .cookies-container .cookies-content ul li, .confidentiality-container .mentions-content ul li, .confidentiality-container .cgv-content ul li, .confidentiality-container .cgu-content ul li, .confidentiality-container .cookies-content ul li {
   list-style: none;
+}
+.mentions-container .mentions-content ul li span, .mentions-container .cgv-content ul li span, .mentions-container .cgu-content ul li span, .mentions-container .cookies-content ul li span, .cgu-container .mentions-content ul li span, .cgu-container .cgv-content ul li span, .cgu-container .cgu-content ul li span, .cgu-container .cookies-content ul li span, .cgv-container .mentions-content ul li span, .cgv-container .cgv-content ul li span, .cgv-container .cgu-content ul li span, .cgv-container .cookies-content ul li span, .cookies-container .mentions-content ul li span, .cookies-container .cgv-content ul li span, .cookies-container .cgu-content ul li span, .cookies-container .cookies-content ul li span, .confidentiality-container .mentions-content ul li span, .confidentiality-container .cgv-content ul li span, .confidentiality-container .cgu-content ul li span, .confidentiality-container .cookies-content ul li span {
+  font-weight: 600;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

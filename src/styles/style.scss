@@ -10,6 +10,7 @@
     --yellow: #ffb400;
     --green: #44ca5b;
     --pink: #ce6b9c;
+    --orange: #db4500;
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -365,24 +366,39 @@ header {
 }
   
 // MAIN
-.cgu-content {
-    height: 100vh;
-    background-color: aqua;
-}
 
-.mentions-container {
+.mentions-container, .cgu-container, .cgv-container, .cookies-container, .confidentiality-container {
     border: 1px solid black;
     width: 100%;
 
     h2 {
         border-bottom: 4px solid var(--blue);
     }
-
-    .mentions-content {
-        h3 {
+    
+    .mentions-content, .cgv-content, .cgu-content, .cookies-content {
+        .first-h3 {
             border-bottom: 4px solid var(--blue);
         }
-
+        .second-h3 {
+            border-bottom: 4px solid var(--red);
+        }
+        .third-h3 {
+            border-bottom: 4px solid var(--yellow);
+        }
+        .four-h3 {
+            border-bottom: 4px solid var(--green);
+        }
+        .five-h3 {
+            border-bottom: 4px solid var(--pink);
+        }
+        .six-h3 {
+            border-bottom: 4px solid var(--orange);
+        }
+    
+        span {
+            font-weight: 600;
+            text-decoration: underline;
+        }
         ul {
             background: var(--light);
             margin: 1rem auto;
@@ -391,6 +407,11 @@ header {
 
             li {
                 list-style: none;
+
+                span {
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
             }
         }
     }
