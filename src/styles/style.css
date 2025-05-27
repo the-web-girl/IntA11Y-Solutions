@@ -177,11 +177,19 @@
 }
 
 #portfolio .portfolios {
-  width: 115%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   margin-top: 3rem;
+}
+@media screen and (max-width: 768px) {
+  #portfolio .portfolios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
 }
 #portfolio .portfolios .port-text {
   font-size: 1.1rem;
@@ -192,12 +200,12 @@
   border-radius: 15px;
   height: -moz-max-content;
   height: max-content;
-  width: 31%;
+  width: 30%;
   margin: 0.5rem;
 }
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 768px) {
   #portfolio .portfolios .portfolio-item {
-    width: 100%;
+    width: 75%;
   }
 }
 @media (min-width: 969px) and (max-width: 1023px) {
@@ -360,7 +368,7 @@
 }
 @media screen and (min-width: 640px) {
   #portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop {
-    background: rgba(0, 0, 0, 0.3);
+    background-color: lime;
   }
 }
 #portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop.active {
@@ -582,6 +590,11 @@ header nav a:focus, header nav a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+@media screen and (max-width: 960px) {
+  .social-container ul {
+    flex-wrap: wrap;
+  }
 }
 .social-container ul li a {
   display: flex;
