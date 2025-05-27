@@ -347,15 +347,33 @@
   width: 100%;
   margin: 1rem 1.5rem;
 }
+@media screen and (max-width: 976px) {
+  #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before {
+    margin: 1rem 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
 #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .left {
   width: 60%;
 }
+@media screen and (max-width: 976px) {
+  #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .left {
+    width: 100%;
+  }
+}
 #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .right {
-  width: 40%;
+  height: 100%;
   text-align: center;
 }
 #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .right img {
   width: 100%;
+}
+@media screen and (max-width: 976px) {
+  #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .right {
+    width: 100%;
+  }
 }
 #portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop {
   display: none;
