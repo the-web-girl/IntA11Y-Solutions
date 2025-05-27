@@ -20,9 +20,9 @@ const portfolio = [
       image: "https://images.pexels.com/photos/3408743/pexels-photo-3408743.jpeg"
     },
     {
-      title: "Landing page écoresponsable et inclusive",
-      description: "Conception d'une landing page respectueuse de l'environnement et accessible à tous.",
-      image: "https://images.pexels.com/photos/3556127/pexels-photo-3556127.jpeg"
+      title: "Refonte d'un cv site",
+      description: "Réalisation de la refonte d'un cv site pour un client avec création d'un image de profil, un nouveau thème couleurs plus en adéquation avec le poste ciblé.",
+      image: "img/Realisations/refonte-cv-site-yves.png"
     }
   ];
 
@@ -40,3 +40,5 @@ const portfolio = [
 
     grid.appendChild(div);
   });
+
+  

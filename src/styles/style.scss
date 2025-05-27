@@ -11,12 +11,17 @@
     --green: #44ca5b;
     --pink: #ce6b9c;
     --orange: #db4500;
+    --transparent: rgba(255, 255, 255, 0.6);
 }
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+@import './components/button';
+@import './components/modal';
+@import './components/portfolio';
 
 // BODY
 body {
@@ -367,6 +372,9 @@ header {
   
 // MAIN
 
+.cgu-container, .cgv-container {
+    min-height: 50vh;
+}
 .mentions-container, .cgu-container, .cgv-container, .cookies-container, .confidentiality-container {
     border: 1px solid black;
     width: 100%;

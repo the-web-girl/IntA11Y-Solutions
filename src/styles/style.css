@@ -10,12 +10,369 @@
   --green: #44ca5b;
   --pink: #ce6b9c;
   --orange: #db4500;
+  --transparent: rgba(255, 255, 255, 0.6);
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.btn-container {
+  display: flex;
+  align-self: flex-start;
+}
+.btn-container .main-btn {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+.btn-container .main-btn:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+}
+
+.main-btn {
+  border-radius: 30px;
+  color: var(--color-reverse);
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.main-btn .btn-txt {
+  padding: 0 2rem;
+}
+@media screen and (max-width: 768px) {
+  .main-btn .btn-txt {
+    padding: 0 1rem !important;
+  }
+}
+.main-btn .btn-text {
+  padding: 0 2rem;
+}
+.main-btn .btn-text:hover {
+  color: var(--color-reverse);
+}
+.main-btn .btn-icon {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.main-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+.main-btn:hover {
+  transition: all 0.4s ease-out;
+  color: var(--color-reverse);
+}
+.main-btn:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+
+.submit-btn-form {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #000;
+  color: var(--color-reverse);
+  margin: 0.5rem 0;
+  border-radius: 30px;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.submit-btn-form .btn-text {
+  padding: 0 2rem;
+}
+.submit-btn-form .btn-icon {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.submit-btn-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+.submit-btn-form:hover {
+  transition: all 0.4s ease-out;
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+.submit-btn-form:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+
+.c-dialog {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 2.4rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background: var(--color-secondary-bis);
+  transition: 0.2s;
+}
+.c-dialog .c-dialog__box {
+  flex: 1;
+  max-width: 70rem;
+  margin: auto;
+  padding: 2.4rem;
+  background-color: var(--color-primary);
+}
+.c-dialog .c-dialog__box button {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-dialog .c-dialog__box button .fa-times {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.c-dialog[aria-hidden=true] {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#portfolio .portfolios {
+  width: 115%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+#portfolio .portfolios .port-text {
+  font-size: 1.1rem;
+  margin: 1.6rem auto;
+}
+#portfolio .portfolios .portfolio-item {
+  position: relative;
+  border-radius: 15px;
+  height: -moz-max-content;
+  height: max-content;
+  width: 31%;
+  margin: 0.5rem;
+}
+@media screen and (max-width: 968px) {
+  #portfolio .portfolios .portfolio-item {
+    width: 100%;
+  }
+}
+@media (min-width: 969px) and (max-width: 1023px) {
+  #portfolio .portfolios .portfolio-item {
+    width: 45%;
+  }
+}
+#portfolio .portfolios .portfolio-item .image {
+  min-width: 100%;
+}
+#portfolio .portfolios .portfolio-item .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  filter: grayscale(0.7);
+}
+#portfolio .portfolios .portfolio-item img {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .portfolios .portfolio-item .hover-items {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* native <dialog> element uses the ::backdrop pseudo-element */
+  /* dialog::backdrop, */
+  /* this is added to the body when a dialog is open */
+}
+#portfolio .portfolios .portfolio-item .hover-items .folio-title {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  background-color: var(--transparent);
+  border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+  #portfolio .portfolios .portfolio-item .hover-items .folio-title {
+    font-size: 1.2rem !important;
+  }
+}
+#portfolio .portfolios .portfolio-item .hover-items .folio-txt {
+  color: var(--color-black);
+  background-color: var(--transparent);
+  border-radius: 5px;
+  padding: 5px;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons .icon {
+  border: 2px solid var(--yellow);
+  background-color: var(--light);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons .icon img {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons .icon:hover {
+  outline: 3px solid var(--accent);
+  outline-offset: 2.5px;
+}
+#portfolio .portfolios .portfolio-item .hover-items .hidden {
+  display: none;
+}
+#portfolio .portfolios .portfolio-item .hover-items .default_dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] {
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #000;
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 640px) {
+  #portfolio .portfolios .portfolio-item .hover-items [role=dialog] {
+    position: absolute;
+    min-width: 610px; /* == breakpoint - left+right margin */
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .h2_label, #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_label {
+  color: var(--color-black);
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_label--p {
+  color: var(--color-black);
+  font-size: 1rem;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] img {
+  width: 70%;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_form_actions {
+  text-align: right;
+  padding: 0 20px 20px;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_form_actions .btn-close {
+  background-color: var(--blue);
+  width: 100%;
+  height: 30px;
+  border: 2px solid var(--yellow);
+  border-radius: 25px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-weight: 600;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_form_actions .btn-close:hover {
+  outline: 3px solid var(--accent);
+  outline-offset: 2.5px;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 1rem 1.5rem;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .left {
+  width: 60%;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .right {
+  width: 40%;
+  text-align: center;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .right img {
+  width: 100%;
+}
+#portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop {
+  display: none;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@media screen and (min-width: 640px) {
+  #portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+#portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop.active {
+  display: block;
+  z-index: 1000;
+  animation: none;
+}
+#portfolio .portfolios .portfolio-item .hover-items .no-scroll {
+  overflow-y: auto !important;
+}
+#portfolio .portfolios .portfolio-item .hover-items .has-dialog {
+  overflow: hidden;
 }
 
 body {
@@ -307,6 +664,10 @@ header nav a:focus, header nav a:hover {
 .back-to-top:focus, .back-to-top:hover {
   outline-offset: 1px;
   outline: 3px solid #000;
+}
+
+.cgu-container, .cgv-container {
+  min-height: 50vh;
 }
 
 .mentions-container, .cgu-container, .cgv-container, .cookies-container, .confidentiality-container {
