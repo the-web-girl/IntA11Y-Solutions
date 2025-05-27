@@ -9,12 +9,370 @@
   --yellow: #ffb400;
   --green: #44ca5b;
   --pink: #ce6b9c;
+  --orange: #db4500;
+  --transparent: rgba(255, 255, 255, 0.6);
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.btn-container {
+  display: flex;
+  align-self: flex-start;
+}
+.btn-container .main-btn {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+.btn-container .main-btn:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+}
+
+.main-btn {
+  border-radius: 30px;
+  color: var(--color-reverse);
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.main-btn .btn-txt {
+  padding: 0 2rem;
+}
+@media screen and (max-width: 768px) {
+  .main-btn .btn-txt {
+    padding: 0 1rem !important;
+  }
+}
+.main-btn .btn-text {
+  padding: 0 2rem;
+}
+.main-btn .btn-text:hover {
+  color: var(--color-reverse);
+}
+.main-btn .btn-icon {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.main-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+.main-btn:hover {
+  transition: all 0.4s ease-out;
+  color: var(--color-reverse);
+}
+.main-btn:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+
+.submit-btn-form {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #000;
+  color: var(--color-reverse);
+  margin: 0.5rem 0;
+  border-radius: 30px;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+.submit-btn-form .btn-text {
+  padding: 0 2rem;
+}
+.submit-btn-form .btn-icon {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.submit-btn-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+.submit-btn-form:hover {
+  transition: all 0.4s ease-out;
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+.submit-btn-form:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+
+.c-dialog {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 2.4rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  background: var(--color-secondary-bis);
+  transition: 0.2s;
+}
+.c-dialog .c-dialog__box {
+  flex: 1;
+  max-width: 70rem;
+  margin: auto;
+  padding: 2.4rem;
+  background-color: var(--color-primary);
+}
+.c-dialog .c-dialog__box button {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.c-dialog .c-dialog__box button .fa-times {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.c-dialog[aria-hidden=true] {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#portfolio .portfolios {
+  width: 115%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+#portfolio .portfolios .port-text {
+  font-size: 1.1rem;
+  margin: 1.6rem auto;
+}
+#portfolio .portfolios .portfolio-item {
+  position: relative;
+  border-radius: 15px;
+  height: -moz-max-content;
+  height: max-content;
+  width: 31%;
+  margin: 0.5rem;
+}
+@media screen and (max-width: 968px) {
+  #portfolio .portfolios .portfolio-item {
+    width: 100%;
+  }
+}
+@media (min-width: 969px) and (max-width: 1023px) {
+  #portfolio .portfolios .portfolio-item {
+    width: 45%;
+  }
+}
+#portfolio .portfolios .portfolio-item .image {
+  min-width: 100%;
+}
+#portfolio .portfolios .portfolio-item .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  filter: grayscale(0.7);
+}
+#portfolio .portfolios .portfolio-item img {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .portfolios .portfolio-item .hover-items {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* native <dialog> element uses the ::backdrop pseudo-element */
+  /* dialog::backdrop, */
+  /* this is added to the body when a dialog is open */
+}
+#portfolio .portfolios .portfolio-item .hover-items .folio-title {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  background-color: var(--transparent);
+  border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+  #portfolio .portfolios .portfolio-item .hover-items .folio-title {
+    font-size: 1.2rem !important;
+  }
+}
+#portfolio .portfolios .portfolio-item .hover-items .folio-txt {
+  color: var(--color-black);
+  background-color: var(--transparent);
+  border-radius: 5px;
+  padding: 5px;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons .icon {
+  border: 2px solid var(--yellow);
+  background-color: var(--light);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons .icon img {
+  width: 100%;
+  height: 100%;
+}
+#portfolio .portfolios .portfolio-item .hover-items .icons .icon:hover {
+  outline: 3px solid var(--accent);
+  outline-offset: 2.5px;
+}
+#portfolio .portfolios .portfolio-item .hover-items .hidden {
+  display: none;
+}
+#portfolio .portfolios .portfolio-item .hover-items .default_dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] {
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #000;
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 640px) {
+  #portfolio .portfolios .portfolio-item .hover-items [role=dialog] {
+    position: absolute;
+    min-width: 610px; /* == breakpoint - left+right margin */
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.12), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .h2_label, #portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_label {
+  color: var(--color-black);
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_label--p {
+  color: var(--color-black);
+  font-size: 1rem;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] img {
+  width: 70%;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_form_actions {
+  text-align: right;
+  padding: 0 20px 20px;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_form_actions .btn-close {
+  background-color: var(--blue);
+  width: 100%;
+  height: 30px;
+  border: 2px solid var(--yellow);
+  border-radius: 25px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-weight: 600;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .dialog_form_actions .btn-close:hover {
+  outline: 3px solid var(--accent);
+  outline-offset: 2.5px;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 1rem 1.5rem;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .left {
+  width: 60%;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .right {
+  width: 40%;
+  text-align: center;
+}
+#portfolio .portfolios .portfolio-item .hover-items [role=dialog] .project-before .right img {
+  width: 100%;
+}
+#portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop {
+  display: none;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+@media screen and (min-width: 640px) {
+  #portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+#portfolio .portfolios .portfolio-item .hover-items .dialog-backdrop.active {
+  display: block;
+  z-index: 1000;
+  animation: none;
+}
+#portfolio .portfolios .portfolio-item .hover-items .no-scroll {
+  overflow-y: auto !important;
+}
+#portfolio .portfolios .portfolio-item .hover-items .has-dialog {
+  overflow: hidden;
 }
 
 body {
@@ -308,27 +666,49 @@ header nav a:focus, header nav a:hover {
   outline: 3px solid #000;
 }
 
-.cgu-content {
-  height: 100vh;
-  background-color: aqua;
+.cgu-container, .cgv-container {
+  min-height: 50vh;
 }
 
-.mentions-container {
+.mentions-container, .cgu-container, .cgv-container, .cookies-container, .confidentiality-container {
   border: 1px solid black;
   width: 100%;
 }
-.mentions-container h2 {
+.mentions-container h2, .cgu-container h2, .cgv-container h2, .cookies-container h2, .confidentiality-container h2 {
   border-bottom: 4px solid var(--blue);
 }
-.mentions-container .mentions-content h3 {
+.mentions-container .mentions-content .first-h3, .mentions-container .cgv-content .first-h3, .mentions-container .cgu-content .first-h3, .mentions-container .cookies-content .first-h3, .cgu-container .mentions-content .first-h3, .cgu-container .cgv-content .first-h3, .cgu-container .cgu-content .first-h3, .cgu-container .cookies-content .first-h3, .cgv-container .mentions-content .first-h3, .cgv-container .cgv-content .first-h3, .cgv-container .cgu-content .first-h3, .cgv-container .cookies-content .first-h3, .cookies-container .mentions-content .first-h3, .cookies-container .cgv-content .first-h3, .cookies-container .cgu-content .first-h3, .cookies-container .cookies-content .first-h3, .confidentiality-container .mentions-content .first-h3, .confidentiality-container .cgv-content .first-h3, .confidentiality-container .cgu-content .first-h3, .confidentiality-container .cookies-content .first-h3 {
   border-bottom: 4px solid var(--blue);
 }
-.mentions-container .mentions-content ul {
+.mentions-container .mentions-content .second-h3, .mentions-container .cgv-content .second-h3, .mentions-container .cgu-content .second-h3, .mentions-container .cookies-content .second-h3, .cgu-container .mentions-content .second-h3, .cgu-container .cgv-content .second-h3, .cgu-container .cgu-content .second-h3, .cgu-container .cookies-content .second-h3, .cgv-container .mentions-content .second-h3, .cgv-container .cgv-content .second-h3, .cgv-container .cgu-content .second-h3, .cgv-container .cookies-content .second-h3, .cookies-container .mentions-content .second-h3, .cookies-container .cgv-content .second-h3, .cookies-container .cgu-content .second-h3, .cookies-container .cookies-content .second-h3, .confidentiality-container .mentions-content .second-h3, .confidentiality-container .cgv-content .second-h3, .confidentiality-container .cgu-content .second-h3, .confidentiality-container .cookies-content .second-h3 {
+  border-bottom: 4px solid var(--red);
+}
+.mentions-container .mentions-content .third-h3, .mentions-container .cgv-content .third-h3, .mentions-container .cgu-content .third-h3, .mentions-container .cookies-content .third-h3, .cgu-container .mentions-content .third-h3, .cgu-container .cgv-content .third-h3, .cgu-container .cgu-content .third-h3, .cgu-container .cookies-content .third-h3, .cgv-container .mentions-content .third-h3, .cgv-container .cgv-content .third-h3, .cgv-container .cgu-content .third-h3, .cgv-container .cookies-content .third-h3, .cookies-container .mentions-content .third-h3, .cookies-container .cgv-content .third-h3, .cookies-container .cgu-content .third-h3, .cookies-container .cookies-content .third-h3, .confidentiality-container .mentions-content .third-h3, .confidentiality-container .cgv-content .third-h3, .confidentiality-container .cgu-content .third-h3, .confidentiality-container .cookies-content .third-h3 {
+  border-bottom: 4px solid var(--yellow);
+}
+.mentions-container .mentions-content .four-h3, .mentions-container .cgv-content .four-h3, .mentions-container .cgu-content .four-h3, .mentions-container .cookies-content .four-h3, .cgu-container .mentions-content .four-h3, .cgu-container .cgv-content .four-h3, .cgu-container .cgu-content .four-h3, .cgu-container .cookies-content .four-h3, .cgv-container .mentions-content .four-h3, .cgv-container .cgv-content .four-h3, .cgv-container .cgu-content .four-h3, .cgv-container .cookies-content .four-h3, .cookies-container .mentions-content .four-h3, .cookies-container .cgv-content .four-h3, .cookies-container .cgu-content .four-h3, .cookies-container .cookies-content .four-h3, .confidentiality-container .mentions-content .four-h3, .confidentiality-container .cgv-content .four-h3, .confidentiality-container .cgu-content .four-h3, .confidentiality-container .cookies-content .four-h3 {
+  border-bottom: 4px solid var(--green);
+}
+.mentions-container .mentions-content .five-h3, .mentions-container .cgv-content .five-h3, .mentions-container .cgu-content .five-h3, .mentions-container .cookies-content .five-h3, .cgu-container .mentions-content .five-h3, .cgu-container .cgv-content .five-h3, .cgu-container .cgu-content .five-h3, .cgu-container .cookies-content .five-h3, .cgv-container .mentions-content .five-h3, .cgv-container .cgv-content .five-h3, .cgv-container .cgu-content .five-h3, .cgv-container .cookies-content .five-h3, .cookies-container .mentions-content .five-h3, .cookies-container .cgv-content .five-h3, .cookies-container .cgu-content .five-h3, .cookies-container .cookies-content .five-h3, .confidentiality-container .mentions-content .five-h3, .confidentiality-container .cgv-content .five-h3, .confidentiality-container .cgu-content .five-h3, .confidentiality-container .cookies-content .five-h3 {
+  border-bottom: 4px solid var(--pink);
+}
+.mentions-container .mentions-content .six-h3, .mentions-container .cgv-content .six-h3, .mentions-container .cgu-content .six-h3, .mentions-container .cookies-content .six-h3, .cgu-container .mentions-content .six-h3, .cgu-container .cgv-content .six-h3, .cgu-container .cgu-content .six-h3, .cgu-container .cookies-content .six-h3, .cgv-container .mentions-content .six-h3, .cgv-container .cgv-content .six-h3, .cgv-container .cgu-content .six-h3, .cgv-container .cookies-content .six-h3, .cookies-container .mentions-content .six-h3, .cookies-container .cgv-content .six-h3, .cookies-container .cgu-content .six-h3, .cookies-container .cookies-content .six-h3, .confidentiality-container .mentions-content .six-h3, .confidentiality-container .cgv-content .six-h3, .confidentiality-container .cgu-content .six-h3, .confidentiality-container .cookies-content .six-h3 {
+  border-bottom: 4px solid var(--orange);
+}
+.mentions-container .mentions-content span, .mentions-container .cgv-content span, .mentions-container .cgu-content span, .mentions-container .cookies-content span, .cgu-container .mentions-content span, .cgu-container .cgv-content span, .cgu-container .cgu-content span, .cgu-container .cookies-content span, .cgv-container .mentions-content span, .cgv-container .cgv-content span, .cgv-container .cgu-content span, .cgv-container .cookies-content span, .cookies-container .mentions-content span, .cookies-container .cgv-content span, .cookies-container .cgu-content span, .cookies-container .cookies-content span, .confidentiality-container .mentions-content span, .confidentiality-container .cgv-content span, .confidentiality-container .cgu-content span, .confidentiality-container .cookies-content span {
+  font-weight: 600;
+  text-decoration: underline;
+}
+.mentions-container .mentions-content ul, .mentions-container .cgv-content ul, .mentions-container .cgu-content ul, .mentions-container .cookies-content ul, .cgu-container .mentions-content ul, .cgu-container .cgv-content ul, .cgu-container .cgu-content ul, .cgu-container .cookies-content ul, .cgv-container .mentions-content ul, .cgv-container .cgv-content ul, .cgv-container .cgu-content ul, .cgv-container .cookies-content ul, .cookies-container .mentions-content ul, .cookies-container .cgv-content ul, .cookies-container .cgu-content ul, .cookies-container .cookies-content ul, .confidentiality-container .mentions-content ul, .confidentiality-container .cgv-content ul, .confidentiality-container .cgu-content ul, .confidentiality-container .cookies-content ul {
   background: var(--light);
   margin: 1rem auto;
   padding: 1rem;
   border-left: 4px solid var(--accent);
 }
-.mentions-container .mentions-content ul li {
+.mentions-container .mentions-content ul li, .mentions-container .cgv-content ul li, .mentions-container .cgu-content ul li, .mentions-container .cookies-content ul li, .cgu-container .mentions-content ul li, .cgu-container .cgv-content ul li, .cgu-container .cgu-content ul li, .cgu-container .cookies-content ul li, .cgv-container .mentions-content ul li, .cgv-container .cgv-content ul li, .cgv-container .cgu-content ul li, .cgv-container .cookies-content ul li, .cookies-container .mentions-content ul li, .cookies-container .cgv-content ul li, .cookies-container .cgu-content ul li, .cookies-container .cookies-content ul li, .confidentiality-container .mentions-content ul li, .confidentiality-container .cgv-content ul li, .confidentiality-container .cgu-content ul li, .confidentiality-container .cookies-content ul li {
   list-style: none;
+}
+.mentions-container .mentions-content ul li span, .mentions-container .cgv-content ul li span, .mentions-container .cgu-content ul li span, .mentions-container .cookies-content ul li span, .cgu-container .mentions-content ul li span, .cgu-container .cgv-content ul li span, .cgu-container .cgu-content ul li span, .cgu-container .cookies-content ul li span, .cgv-container .mentions-content ul li span, .cgv-container .cgv-content ul li span, .cgv-container .cgu-content ul li span, .cgv-container .cookies-content ul li span, .cookies-container .mentions-content ul li span, .cookies-container .cgv-content ul li span, .cookies-container .cgu-content ul li span, .cookies-container .cookies-content ul li span, .confidentiality-container .mentions-content ul li span, .confidentiality-container .cgv-content ul li span, .confidentiality-container .cgu-content ul li span, .confidentiality-container .cookies-content ul li span {
+  font-weight: 600;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,225 @@
+#portfolio {
+
+    .portfolios {
+        width: 115%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+    
+        .port-text {
+            font-size: 1.1rem;
+            margin: 1.6rem auto;
+        }
+    
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            // width: 100%;
+            height: max-content;
+            width: 31%;
+            margin: .5rem;
+            @media screen and (max-width: 968px) {
+                width: 100%;
+            }
+            @media (min-width: 969px) and (max-width: 1023px) {
+                width: 45%;
+            }
+            .image {
+                min-width: 100%;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 15px;
+                    filter: grayscale(.7);
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .hover-items{
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.5);
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                // transform: scale(0);
+                // transition: all .4s ease-in-out;
+                .folio-title{
+                    font-size: 1.5rem;
+                    color: var(--color-black);
+                    background-color: var(--transparent);
+                    border-radius: 5px;
+                    @media screen and (max-width: 768px) {
+                        font-size: 1.2rem!important;
+                    }
+                }
+                .folio-txt {
+                    color: var(--color-black);
+                    background-color: var(--transparent);
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+                .icons{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 1;
+
+                    .icon {
+                        border: 2px solid var(--yellow);
+                        background-color: var(--light);
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 1rem;
+                        cursor: pointer;
+                        transition: all .4s ease-in-out;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+    
+                        &:hover{
+                            // border-color: var(--yellow);
+                            outline: 3px solid var(--accent);
+                            outline-offset: 2.5px;
+                        }
+                    }
+                }
+                .hidden {
+                    display: none;
+                }
+                .default_dialog {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center ;
+                } 
+                [role="dialog"] {
+                    box-sizing: border-box;
+                    padding: 15px;
+                    border: 1px solid #000;
+                    background-color: #fff;
+                    // max-width: 900px;
+                    width: 100%;
+                    margin: 0 auto;
+
+                    @media screen and (min-width: 640px) {
+                        position: absolute;
+                        // top: 2rem;
+                        // left: 50vw; /* move to the middle of the screen (assumes relative parent is the body/viewport) */
+                        // transform: translateX(
+                        //     -50%
+                        // ); /* move backwards 50% of this element's width */
+                    
+                        min-width: calc(640px - (15px * 2)); /* == breakpoint - left+right margin */
+                        // min-height: auto;
+                        box-shadow: 0 19px 38px rgb(0 0 0 / 12%), 0 15px 12px rgb(0 0 0 / 22%);
+                    }
+                    .h2_label, .dialog_label {
+                        color: var(--color-black);
+                    }
+                    .dialog_label--p {
+                        color: var(--color-black);
+                        font-size: 1rem;
+                    }
+                    img {
+                        // height: 500px;
+                        width: 70%;
+                    }
+                    .dialog_form_actions {
+                        text-align: right;
+                        padding: 0 20px 20px;
+
+                        .btn-close {
+                            background-color: var(--blue);
+                            width: 100%;
+                            height: 30px;
+                            border: 2px solid var(--yellow);
+                            border-radius: 25px;
+                            padding: 10px;
+                            display: flex;
+                            align-items: center;
+                            margin: 1rem auto;
+                            cursor: pointer;
+                            transition: all .4s ease-in-out;
+                            font-weight: 600;
+
+                            &:hover{
+                                // border-color: var(--yellow);
+                                outline: 3px solid var(--accent);
+                                outline-offset: 2.5px;
+                            }
+                        }
+
+                        // .dialog_close_button {
+                        //     float: right;
+                        //     position: absolute;
+                        //     top: 10px;
+                        //     left: 92%;
+                        //     height: 25px;
+                        // }
+                    }
+
+                    .project-before {
+                        display: flex;
+                        flex-direction: row;
+
+                        width: 100%;
+                        margin: 1rem 1.5rem;
+                        .left{
+                            width: 60%;
+                        }
+                        .right {
+                            width: 40%;
+                            text-align: center;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                /* native <dialog> element uses the ::backdrop pseudo-element */
+                /* dialog::backdrop, */
+                .dialog-backdrop {
+                    display: none;
+                    position: fixed;
+                    // overflow: hidden;
+                    overflow: auto;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    @media screen and (min-width: 640px) {
+                        background: rgb(0 0 0 / 30%);
+                    } 
+                }
+                .dialog-backdrop.active {
+                    display: block;
+                    z-index: 1000;
+                    animation: none;
+                }  
+                .no-scroll {
+                  overflow-y: auto !important;
+                }
+                /* this is added to the body when a dialog is open */
+                .has-dialog {
+                  overflow: hidden;
+                }
+            }            
+        }
+    }
+}
